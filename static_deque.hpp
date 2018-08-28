@@ -37,4 +37,32 @@ private:
 };
 
 
+template<typename T>
+void static_Deque<T>::push_front(const T& e)
+{
+	assert(!full());
+
+	bgn--;
+
+	if(bgn<0)
+		bgn = Tmax - abs(bgn);
+
+	elemnts[bgn] = e;
+
+}
+
+template<typename T>
+void static_Deque<T>::pop_back()
+{
+	assert(!empty());
+
+	end--;
+
+	if(end < 0)
+		end = Tmax - abs(end);
+
+
+}
+
+
 #endif
